@@ -1,0 +1,59 @@
+
+<mat-tab-group>
+  <mat-tab label="Principal">  
+    <div class="contenedor">
+      <mat-card class="tarjeta" *ngIf="usuario!=null">
+        <mat-card-header>
+          <mat-card-title>Id del usuario : {{ usuario.id}} </mat-card-title>
+          <mat-card-subtitle>Nombre: {{ usuario.name }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Nick: {{ usuario.username }}</p>
+          <p>Email:{{ usuario.email }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button (click)="volver()" color="primary">Volver</button>
+        </mat-card-actions>
+      </mat-card>
+  </div>
+  </mat-tab>
+  <mat-tab label="Dirección">
+    <div class="contenedor">
+      <mat-card class="tarjeta" *ngIf="usuario!=null">
+        <mat-card-header>
+          <mat-card-title>Calle : {{ usuario.address.street}} </mat-card-title>
+          <mat-card-subtitle>Apartamento: {{ usuario.address.suite }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Ciudad: {{ usuario.address.city }}</p>
+          <p>ZIP:{{ usuario.address.zipcode }}</p>
+          <p>Geolocalización: Latitud {{ usuario.address.geo.lat }} Longitud {{ usuario.address.geo.lng }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button (click)="volver()" color="primary">Volver</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Otros">
+    <div class="contenedor">
+      <mat-card class="tarjeta" *ngIf="usuario!=null">
+        <mat-card-header>
+          <mat-card-title>Telefono : {{ usuario.phone }} </mat-card-title>
+          <mat-card-subtitle>Sitio web: {{ usuario.website }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Compañia: {{ usuario.company.name }}</p>
+          <p>Frase:{{ usuario.company.catchPhrase }}</p>
+          <p>Bs {{ usuario.company.bs }} </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button (click)="volver()" color="primary">Volver</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+

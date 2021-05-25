@@ -1,0 +1,28 @@
+<div>
+    <h1 mat-dialog-title>Tarea</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 800px; padding: 1rem;">
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.userId" type="number" placeholder="Id usuario">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.id" type="number" placeholder="ID">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.title" type="text" placeholder="Titulo">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="data.completed" type="text" placeholder="Completado"> <!-- Ojo boleano-->
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+    </div>
+</div>

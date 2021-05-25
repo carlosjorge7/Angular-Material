@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <!--<mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">-->
+  <mat-sidenav #drawer class="sidenav" >
+    <mat-nav-list color="primary">
+      <a mat-list-item routerLink="/clientes">Clientes</a>
+      <a mat-list-item routerLink="/productos">Productos</a>
+      <a mat-list-item routerLink="/facturas">Facturas</a>
+      <a mat-list-item routerLink="/usuarios">Usuarios</a>
+      <a mat-list-item routerLink="/tareas">Tareas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+       >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="title">
+        <span>Ccip</span>
+      </div>
+      <div class="menu-perfil">
+        <app-menu-perfil></app-menu-perfil>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->    
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
